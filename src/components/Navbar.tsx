@@ -1,6 +1,6 @@
 import React from 'react';
 import { GameTab, PlayerStats } from '../types';
-import { Volume2, VolumeX, Coins, Gem } from 'lucide-react';
+import { Volume2, VolumeX, Coins, Gem, ShoppingBag } from 'lucide-react';
 import { sound } from '../utils/audio';
 
 interface NavbarProps {
@@ -105,8 +105,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </nav>
 
-        {/* Zone 3: 1 Primary Action Area (Currency + Audio Toggle) */}
+        {/* Zone 3: 1 Primary Action Area (Amazon Deal + Currency + Audio Toggle) */}
         <div className="flex items-center gap-3 shrink-0">
+          <a
+            href="https://amzn.to/4zEyrR3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/40 rounded-lg text-xs font-mono text-amber-300 hover:text-amber-200 transition-colors whitespace-nowrap"
+            title="Boutique Manga & Goodies Amazon"
+          >
+            <ShoppingBag className="w-3.5 h-3.5 text-amber-400" />
+            <span>Offres Amazon</span>
+          </a>
+
           <div className="hidden sm:flex items-center gap-3 text-xs font-mono tabular-nums bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5">
             <div className="flex items-center gap-1.5 text-amber-400">
               <Coins className="w-3.5 h-3.5" />

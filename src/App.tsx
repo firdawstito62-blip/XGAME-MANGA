@@ -7,7 +7,7 @@ import { NinjaReflexGame } from './components/NinjaReflexGame';
 import { MemoryGame } from './components/MemoryGame';
 import { GachaShop } from './components/GachaShop';
 import { CardCollection } from './components/CardCollection';
-import { SponsorBanner, SPONSOR_URL } from './components/SponsorBanner';
+import { SponsorBanner, AMAZON_PROMO_URL, AUCTIONR_URL } from './components/SponsorBanner';
 import { ResetConfirmModal } from './components/ResetConfirmModal';
 import { sound } from './utils/audio';
 import confetti from 'canvas-confetti';
@@ -135,10 +135,11 @@ export default function App() {
     return true;
   };
 
-  const handleClaimSponsorReward = (bonusCoins: number) => {
+  const handleClaimSponsorReward = (bonusCoins: number, bonusGems: number = 0) => {
     setPlayer((prev) => ({
       ...prev,
       coins: prev.coins + bonusCoins,
+      gems: prev.gems + bonusGems,
     }));
     sound.playVictory();
     try {
@@ -146,7 +147,8 @@ export default function App() {
     } catch {
       // Confetti fallback
     }
-    setLevelUpMessage(`CADEAU PARTENAIRE : +${bonusCoins} Pièces ajoutées à votre trésor !`);
+    const gemText = bonusGems > 0 ? ` & +${bonusGems} Gemme` : '';
+    setLevelUpMessage(`CADEAU PARTENAIRE : +${bonusCoins} Pièces${gemText} ajoutées à votre trésor !`);
     setTimeout(() => setLevelUpMessage(null), 4000);
   };
 
@@ -314,15 +316,27 @@ export default function App() {
             <span>Jeux manga et anime interactifs</span>
           </div>
 
-          {/* Sponsor Link & Reset Button */}
-          <div className="flex flex-wrap items-center justify-center gap-5">
+          {/* Sponsor Links & Reset Button */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <a
-              href={SPONSOR_URL}
+              href={AMAZON_PROMO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-bold"
+              className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1 font-bold"
             >
-              <span>Partenaire Sponsorisé : Auctionr</span>
+              <span>Boutique Manga Amazon</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+
+            <span className="text-slate-700 hidden sm:inline">·</span>
+
+            <a
+              href={AUCTIONR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1 font-bold"
+            >
+              <span>Partenaire Auctionr</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
 

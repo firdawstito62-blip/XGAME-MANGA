@@ -1,0 +1,6 @@
+{
+  "name": "MangaVerse Arcade",
+  "description": "Portail de jeux manga et anime interactifs : Arène de combat Shonen RPG, Quiz & Silhouette, Dojo Réflexe Ninja et Invocation Gacha.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

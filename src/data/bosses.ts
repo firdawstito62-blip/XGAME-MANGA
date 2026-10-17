@@ -1,0 +1,55 @@
+import { BossEnemy } from '../types';
+
+export const MANGA_BOSSES: BossEnemy[] = [
+  {
+    id: 'boss-demon',
+    name: 'Akuma le Démon de Sang',
+    title: 'Général des Lunes Sombres',
+    hp: 400,
+    maxHp: 400,
+    attack: 42,
+    defense: 18,
+    dialogueIntro: '« Un simple humain ose défier les ténèbres ? Tu vas périr dans mes flammes maudites ! »',
+    dialogueDefeat: '« Impossible... Une telle force chez un mortel... Je reviendrai ! »',
+    avatar: '👹',
+    skills: [
+      { name: 'Griffes Écarlates', power: 38, description: 'Lacération sanglante' },
+      { name: 'Fournaise Infernale', power: 65, description: 'Vague de feu démoniaque' },
+      { name: 'Rugissement de Terreur', power: 25, description: 'Onde assourdissante' },
+    ],
+  },
+  {
+    id: 'boss-orochi',
+    name: 'Orochi le Spectre Maudit',
+    title: 'Seigneur Serpent Venimeux',
+    hp: 520,
+    maxHp: 520,
+    attack: 48,
+    defense: 25,
+    dialogueIntro: '« Ton âme sera un magnifique sacrifice pour mon rituel de résurrection ! »',
+    dialogueDefeat: '« Mon venin... dissipé par ta volonté ? Maudit sois-tu ! »',
+    avatar: '🐍',
+    skills: [
+      { name: 'Morsure Toxique', power: 45, description: 'Infection de venin violent' },
+      { name: 'Invocation d\'Anhydre', power: 75, description: 'Nuée de vipères ténébreuses' },
+      { name: 'Constriction Abyssale', power: 55, description: 'Écrasement d\'énergie' },
+    ],
+  },
+  {
+    id: 'boss-titan',
+    name: 'Goliath le Titan Cuirassé',
+    title: 'Le Colosse Destructeur de Murs',
+    hp: 680,
+    maxHp: 680,
+    attack: 54,
+    defense: 35,
+    dialogueIntro: '« Tremblez ! Aucune muraille ni aucune lame ne peut percer mon armure indestructible ! »',
+    dialogueDefeat: '« Mon armure... pulvérisée ? Quelle effroyable puissance... »',
+    avatar: '🗿',
+    skills: [
+      { name: 'Charge Fracassante', power: 52, description: 'Impact sismique frontal' },
+      { name: 'Frappe Sismique Suprême', power: 90, description: 'Le sol se brise en mille éclats' },
+      { name: 'Rugissement Titanesque', power: 35, description: 'Souffle de vapeur bouillante' },
+    ],
+  },
+];
